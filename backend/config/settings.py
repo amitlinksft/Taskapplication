@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'accounts',
     'tasks',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -94,6 +95,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # cors
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    'https://reactapp-fl67.onrender.com',
 ]
 
 RENDER_FRONTEND_URL = os.environ.get('FRONTEND_URL')
@@ -107,6 +109,13 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 5,
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Task Manager API',
+    'DESCRIPTION': 'API for managing tasks with JWT authentication, categories, and file attachments.',
+    'VERSION': '1.0.0',
 }
 
 # jwt
