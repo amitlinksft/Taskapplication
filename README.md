@@ -78,13 +78,6 @@ npm start
 ```
 
 The app will open at `http://localhost:3000`.
-
-### Run with Docker
-
-```bash
-docker-compose up --build
-```
-
 - Frontend: `http://localhost:3000`
 - Backend API: `http://localhost:8000`
 
