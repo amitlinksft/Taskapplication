@@ -15,10 +15,19 @@ A full-stack task management application built with Django REST Framework and Re
 
 ## Tech Stack
 
-**Backend:** Django 6, Django REST Framework, SimpleJWT, SQLite/PostgreSQL
+**Backend:** Django 6, Django REST Framework, SimpleJWT, SQLite
 **Frontend:** React 19, React Router, Axios
 **Containerization:** Docker, Docker Compose
 **API Docs:** drf-spectacular (Swagger/ReDoc)
+
+## Live Demo
+
+| Service | URL |
+|---------|-----|
+| Frontend | https://reactapp-fl67-857c.onrender.com |
+| Backend API | https://backend-tk2k-lzrm.onrender.com |
+| Swagger Docs | https://backend-tk2k-lzrm.onrender.com/api/docs/ |
+| ReDoc | https://backend-tk2k-lzrm.onrender.com/api/redoc/ |
 
 ## Project Structure
 
@@ -45,13 +54,15 @@ A full-stack task management application built with Django REST Framework and Re
 
 ## API Documentation
 
-Interactive API docs are available when the backend is running:
+**Live API Docs:**
 
 | URL | Description |
 |-----|-------------|
-| `/api/docs/` | **Swagger UI** — interactive docs, test endpoints directly from the browser |
-| `/api/redoc/` | **ReDoc** — clean, readable API reference |
-| `/api/schema/` | Raw OpenAPI 3.0 schema (JSON) |
+| [Swagger UI](https://backend-tk2k-lzrm.onrender.com/api/docs/) | Interactive docs — test endpoints directly from the browser |
+| [ReDoc](https://backend-tk2k-lzrm.onrender.com/api/redoc/) | Clean, readable API reference |
+| [OpenAPI Schema](https://backend-tk2k-lzrm.onrender.com/api/schema/) | Raw OpenAPI 3.0 schema (JSON) |
+
+Or when running locally: `/api/docs/`, `/api/redoc/`, `/api/schema/`
 
 ## API Endpoints
 
@@ -173,7 +184,6 @@ docker-compose up --build
 | Frontend | http://localhost:3000 |
 | Backend API | http://localhost:8000 |
 | Swagger Docs | http://localhost:8000/api/docs/ |
-| PostgreSQL | localhost:5432 |
 
 ### Run Locally (without Docker)
 
@@ -206,14 +216,13 @@ The app will open at `http://localhost:3000`.
 |----------|---------|-------------|
 | `SECRET_KEY` | insecure default | Django secret key |
 | `DEBUG` | `False` | Enable debug mode |
-| `DATABASE_URL` | SQLite | Database connection string |
 | `ALLOWED_HOSTS` | `*` | Comma-separated allowed hosts |
 | `FRONTEND_URL` | — | Frontend URL for CORS |
 | `REACT_APP_API_URL` | `http://localhost:8000/api` | Backend API URL for frontend |
 
 ## Environment Notes
 
-- The backend uses SQLite by default, PostgreSQL when `DATABASE_URL` is set.
+- The backend uses SQLite as the database.
 - CORS is configured to allow requests from `http://localhost:3000` and `FRONTEND_URL`.
 - Uploaded attachments are stored in the `media/` directory on the backend.
 - JWT access tokens expire after 1 hour. Refresh tokens last 7 days.

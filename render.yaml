@@ -25,6 +25,6 @@ services:
     startCommand: npm start
     envVars:
       - key: REACT_APP_API_URL
-        value: https://backend-tk2k.onrender.com/api
+        value: https://backend-tk2k-lzrm.onrender.com/api
       - key: NODE_VERSION
         value: "20"
