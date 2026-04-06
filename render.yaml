@@ -1,13 +1,7 @@
-databases:
-  - name: taskapp-db
-    plan: free
-    databaseName: taskapp
-    user: taskapp
-
 services:
-  # Backend API
+  # Backend API (SQLite)
   - type: web
-    name: taskapp-backend
+    name: backend-tk2k
     runtime: python
     plan: free
     rootDir: backend
@@ -16,10 +10,6 @@ services:
     envVars:
       - key: SECRET_KEY
         generateValue: true
-      - key: DATABASE_URL
-        fromDatabase:
-          name: taskapp-db
-          property: connectionString
       - key: FRONTEND_URL
         value: https://reactapp-fl67.onrender.com
       - key: PYTHON_VERSION
@@ -27,7 +17,7 @@ services:
 
   # Frontend Web Service
   - type: web
-    name: reactapp-frontend
+    name: reactapp-fl67
     runtime: node
     plan: free
     rootDir: frontend
@@ -35,6 +25,6 @@ services:
     startCommand: npm start
     envVars:
       - key: REACT_APP_API_URL
-        value: https://taskapp-backend.onrender.com/api
+        value: https://backend-tk2k.onrender.com/api
       - key: NODE_VERSION
         value: "20"
