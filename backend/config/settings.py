@@ -97,6 +97,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://reactapp-fl67.onrender.com',
+    'https://reactapp-fl67-857c.onrender.com',
 ]
 
 RENDER_FRONTEND_URL = os.environ.get('FRONTEND_URL')

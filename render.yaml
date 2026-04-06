@@ -11,7 +11,7 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: FRONTEND_URL
-        value: https://reactapp-fl67.onrender.com
+        value: https://reactapp-fl67-857c.onrender.com
       - key: PYTHON_VERSION
         value: "3.12.0"
 
